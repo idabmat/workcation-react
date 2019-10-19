@@ -1,5 +1,16 @@
 import React from 'react'
 import Stars from '../stars'
+import Badge from '../badge'
+
+const BadgeNew = ({ isNew }) => {
+  if (!isNew) return null
+
+  return (
+    <div className='mr-2'>
+      <Badge>New</Badge>
+    </div>
+  )
+}
 
 const Card = ({ property }) => {
   return (
@@ -10,8 +21,8 @@ const Card = ({ property }) => {
       <div className='relative px-4 -mt-16'>
         <div className='bg-white p-6 rounded-lg shadow-lg'>
           <div className='flex items-baseline'>
-            <span className='inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full uppercase font-medium tracking-wide'>New</span>
-            <div className='ml-2 text-gray-600 text-xs uppercase font-medium tracking-wide'>
+            <BadgeNew isNew={property.new} />
+            <div className='text-gray-600 text-xs uppercase font-medium tracking-wide'>
               { property.beds } beds &bull; { property.baths } baths
             </div>
           </div>
