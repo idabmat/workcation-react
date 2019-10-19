@@ -48,7 +48,7 @@ addParameters({
 
 addDecorator(
   story => (
-    <div className='bg-gray-200 p-6 antialiased text-gray-900 min-h-screen'>
+    <div className='bg-gray-200 antialiased text-gray-900 min-h-screen'>
       {story()}
     </div>
   )
